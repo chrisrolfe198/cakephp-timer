@@ -10,25 +10,24 @@ class TimerFixture extends CakeTestFixture {
  *
  * @var array
  */
-	public $fields = array(
-		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'key' => 'primary'),
-		'name' => array('type' => 'string', 'null' => true, 'default' => null, 'length' => 20, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
-		'createdTimestamp' => array('type' => 'integer', 'null' => true, 'default' => null),
-		'startedTimestamp' => array('type' => 'integer', 'null' => true, 'default' => null),
-		'stoppedTimestamp' => array('type' => 'integer', 'null' => true, 'default' => null),
-		'userId' => array('type' => 'integer', 'null' => true, 'default' => null),
-		'indexes' => array(
-			'PRIMARY' => array('column' => 'id', 'unique' => 1)
+public $fields = array(
+	'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'key' => 'primary'),
+	'name' => array('type' => 'string', 'null' => true, 'default' => null, 'length' => 20, 'collate' => 'latin1_swedish_ci', 'charset' => 'latin1'),
+	'createdTimestamp' => array('type' => 'integer', 'null' => true, 'default' => null),
+	'startedTimestamp' => array('type' => 'integer', 'null' => true, 'default' => null),
+	'stoppedTimestamp' => array('type' => 'integer', 'null' => true, 'default' => null),
+	'userId' => array('type' => 'integer', 'null' => true, 'default' => null),
+	'indexes' => array(
+		'PRIMARY' => array('column' => 'id', 'unique' => 1)
 		),
-		'tableParameters' => array('charset' => 'latin1', 'collate' => 'latin1_swedish_ci', 'engine' => 'InnoDB')
+	'tableParameters' => array('charset' => 'latin1', 'collate' => 'latin1_swedish_ci', 'engine' => 'InnoDB')
 	);
 
 /**
- * Records
- *
- * @var array
+ * Creates an initial set of records
  */
-	public $records = array(
+public function init() {
+	$this->records = array(
 		array(
 			'id' 			   => 1,
 			'name' 			   => 'My first timer',
@@ -36,7 +35,7 @@ class TimerFixture extends CakeTestFixture {
 			'startedTimestamp' => '',
 			'stoppedTimestamp' => '',
 			'userId' 		   => 1
-		),
+			),
 		array(
 			'id' 			   => 3,
 			'name' 			   => 'Eggs',
@@ -45,6 +44,8 @@ class TimerFixture extends CakeTestFixture {
 			'stoppedTimestamp' => '',
 			'userId' 		   => 2
 			),
-	);
+		);
+	parent::init();
+}
 
 }
