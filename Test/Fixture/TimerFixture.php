@@ -16,6 +16,7 @@ class TimerFixture extends CakeTestFixture {
 		'createdTimestamp' => array('type' => 'integer', 'null' => true, 'default' => null),
 		'startedTimestamp' => array('type' => 'integer', 'null' => true, 'default' => null),
 		'stoppedTimestamp' => array('type' => 'integer', 'null' => true, 'default' => null),
+		'userId' => array('type' => 'integer', 'null' => true, 'default' => null),
 		'indexes' => array(
 			'PRIMARY' => array('column' => 'id', 'unique' => 1)
 		),
@@ -33,14 +34,16 @@ class TimerFixture extends CakeTestFixture {
 			'name' 			   => 'My first timer',
 			'createdTimestamp' => 1385164800,
 			'startedTimestamp' => '',
-			'stoppedTimestamp' => ''
+			'stoppedTimestamp' => '',
+			'userId' 		   => 1
 		),
 		array(
 			'id' 			   => 3,
 			'name' 			   => 'Eggs',
 			'createdTimestamp' => 1385164800,
 			'startedTimestamp' => strtotime("now"),
-			'stoppedTimestamp' => ''
+			'stoppedTimestamp' => '',
+			'userId' 		   => 2
 			),
 	);
 
