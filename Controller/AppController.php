@@ -48,6 +48,7 @@ class AppController extends Controller {
 		'RequestHandler',
 		);
     
-    public function beforeFilter() {
+    public function beforeFilter()
+    {
     }
 }
