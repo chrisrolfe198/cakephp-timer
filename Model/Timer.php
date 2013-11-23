@@ -25,7 +25,15 @@ class Timer extends AppModel
 	 */
 	public function getUsersTimers($userId)
 	{
-		$timers = $this->find('all', array('conditions' => array('Timer.userId' => $userId)));
+		// Get the timers from the database
+		$timers = $this->find('all', array('conditions' => array('Timer.userId' => $userId, 'stoppedTimestamp' => null)));
+		// Loop over each record
+		foreach ($timers as &$timer) {
+			$startedTimestamp = $timer['Timer']['startedTimestamp'];
+			if ($startedTimestamp !== null) {
+				$timer['Timer']['timeRunningFor'] = strtotime("now") - $startedTimestamp;
+			}
+		}
 		return $timers;
 	}
 
@@ -37,7 +45,7 @@ class Timer extends AppModel
 	public function getUsersTotalTime($userId)
 	{
 		$totalTime = 0;
-		$timers = $this->getUsersTimers($userId);
+		$timers = $this->find('all', array('conditions' => array('Timer.userId' => $userId)));
 		foreach ($timers as $timer) {
 			// Set the start and stop times in variables for readability
 			$startTime = $timer['Timer']['startedTimestamp'];
