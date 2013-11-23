@@ -6,6 +6,11 @@ class User extends AppModel
 {
 	public $hasMany = 'Timer';
 
+	/**
+	 * Performs a set of actions before it saves the data to the database
+	 * @param  array  $options array of parameters to save to the database
+	 * @return boolean
+	 */
 	public function beforeSave($options = array())
 	{
 		// Before we save a password field
