@@ -1,5 +1,4 @@
 <h2>Home</h2>
-<?=$this->Html->link('Add a timer', array('action' => 'add'), array('class' => 'btn btn-primary'));?>
 <?php foreach ($timers as $timer): ?>
 	<div class="timer">
 		<h3><?=$timer['Timer']['name'];?></h3>
