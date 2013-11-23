@@ -25,3 +25,13 @@ Stack Trace:
 #3 /home/crolfe/www/timer-cake/lib/Cake/Core/App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2013-11-23 18:10:52 Error: Fatal Error (4): syntax error, unexpected 'if' (T_IF) in [/home/crolfe/www/timer-cake/app/Model/Timer.php, line 33]
+2013-11-23 18:10:52 Error: [FatalErrorException] syntax error, unexpected 'if' (T_IF)
+Request URL: /timers
+Stack Trace:
+#0 /home/crolfe/www/timer-cake/lib/Cake/Error/ErrorHandler.php(205): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/crolfe/ww...', 33)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/crolfe/ww...', 33, Array)
+#2 /home/crolfe/www/timer-cake/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/crolfe/ww...', 33, Array)
+#3 /home/crolfe/www/timer-cake/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
