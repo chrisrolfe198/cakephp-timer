@@ -7,6 +7,14 @@ App::uses('AppController', 'Controller');
 
 class UsersController extends AppController
 {
+	/**
+	 * Allowing non-logged in users to access the register action
+	 */
+	public function beforeFilter()
+	{
+		parent::beforeFilter();
+		$this->Auth->allow('register');
+	}
 
 	/**
 	 * Logs a user in to access their timers
