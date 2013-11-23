@@ -43,7 +43,11 @@ class Timer extends AppModel
 	public function startTimer($timerId)
 	{
 		$this->id = $timerId;
-		$this->saveField('startedTimestamp', strtotime("now"));
+		if ($this->saveField('startedTimestamp', strtotime("now"))) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/**
@@ -53,6 +57,11 @@ class Timer extends AppModel
 	 */
 	public function stopTimer($timerId)
 	{
-
+		$this->id = $timerId;
+		if ($this->saveField('stoppedTimestamp', strtotime("now"))) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }

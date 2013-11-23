@@ -43,8 +43,11 @@ class TimerTest extends CakeTestCase
 	 */
 	public function testGetUsersTimers()
 	{
+		// Setting up variables
 		$userId = 1;
+		// Running the function
 		$timersForUser = $this->Timer->getUsersTimers($userId);
+		// Setting up some expected results
 		$expected = array(
 			0 => array(
 				'Timer' => array(
@@ -57,7 +60,7 @@ class TimerTest extends CakeTestCase
 					)
 				)
 			);
-
+		// Testing the results
 		$this->assertEquals($expected, $timersForUser);
 	}
 
@@ -68,9 +71,13 @@ class TimerTest extends CakeTestCase
 	 */
 	public function testGetUsersTotalTime()
 	{
+		// Setting up variables
 		$userId = 1;
+		// Running the function
 		$totalTimeForUser = $this->Timer->getUsersTotalTime($userId);
+		// Setting up some expected results
 		$expected = 0;
+		// Testing the results
 		$this->assertEquals($expected, $totalTimeForUser);
 	}
 
@@ -81,9 +88,14 @@ class TimerTest extends CakeTestCase
 	 */
 	public function testStartTimer()
 	{
+		// Setting up variables
 		$timerId = 1;
-		$this->Timer->startTimer($timerId);
+		// Running the function
+		$startedTimer = $this->Timer->startTimer($timerId);
+		// Retrieving some data to test against
 		$timerData = $this->Timer->find( 'first', array( 'conditions' => array('Timer.id' => $timerId)));
+		// Testing the results
+		$this->assertEquals(true, $startedTimer);
 		$this->assertEquals($timerData['Timer']['startedTimestamp'], strtotime("now"));
 	}
 
@@ -94,9 +106,14 @@ class TimerTest extends CakeTestCase
 	 */
 	public function testStopTimer()
 	{
+		// Setting up variables
 		$timerId = 3;
-		$this->Timer->startTimer($timerId);
+		// Running the function
+		$stoppedTimer = $this->Timer->stopTimer($timerId);
+		// Retrieving some data to test against
 		$timerData = $this->Timer->find( 'first', array( 'conditions' => array('Timer.id' => $timerId)));
+		// Testing the results
+		$this->assertEquals(true, $stoppedTimer);
 		$this->assertEquals($timerData['Timer']['stoppedTimestamp'], strtotime("now"));
 	}
 
