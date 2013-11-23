@@ -21,7 +21,18 @@ class Timer extends AppModel
 	 */
 	public function getUsersTotalTime($userId)
 	{
-
+		$totalTime = 0;
+		$timers = $this->getUsersTimers($userId);
+		foreach ($timers as $timer) {
+			// Set the start and stop times in variables for readability
+			$startTime = $timer['Timer']['startedTimestamp'];
+			$finishTime = $timer['Timer']['stoppedTimestamp'];
+			if ($finishTime > $startTime) {
+				// Add to the total times
+				$totalTime += $finishTime - $startTime;
+			}
+		}
+		return $totalTime;
 	}
 
 	/**
