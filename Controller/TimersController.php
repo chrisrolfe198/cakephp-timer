@@ -13,7 +13,11 @@ class TimersController extends AppController
 	 */
 	public function index()
 	{
-
+		$timers = $this->Timer->getUsersTimers($this->Auth->user('id'));
+		$totalTime = $this->Timer->getUsersTotalTime($this->Auth->user('id'));
+		// Set some variables to display in the view
+		$this->set('timers');
+		$this->set('totalTime');
 	}
 
 	/**
@@ -21,7 +25,13 @@ class TimersController extends AppController
 	 */
 	public function add()
 	{
-
+		if ($this->request->is('post')) {
+			if ($this->Timer->save($this->request->data)) {
+				$this->Session->setFlash('The timer has been added');
+				$this->redirect(array('action' => 'index'));
+			}
+			$this->Session->setFlash('An error occured, the timer has not been added');
+		}
 	}
 
 	/**
@@ -30,7 +40,12 @@ class TimersController extends AppController
 	 */
 	public function start($timerId)
 	{
-
+		if ($this->Timer->startTimer($timerId)) {
+			$this->Session->setFlash('Timer has been started');
+		} else {
+			$this->Session->setFlash('An error occured, we could not start that timer');
+		}
+		$this->redirect(array('action' => 'index'));
 	}
 
 	/**
@@ -39,6 +54,11 @@ class TimersController extends AppController
 	 */
 	public function stop($timerId)
 	{
-
+		if ($this->Timer->stopTimer($timerId)) {
+			$this->Session->setFlash('Timer has been stoped');
+		} else {
+			$this->Session->setFlash('An error occured, we could not stop that timer');
+		}
+		$this->redirect(array('action' => 'index'));
 	}
 }

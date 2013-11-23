@@ -4,6 +4,21 @@ class Timer extends AppModel
 {
 
 	/**
+	 * Function called before a timer is saved
+	 * @param  array  $options array of parameters to save to the database
+	 * @return boolean
+	 */
+	public function beforeSave($options = array())
+	{
+		// If the user id is empty
+		if (empty($this->data[$this->alias]['userId'])) {
+			// Set the user id to the current logged in user
+			$this->data[$this->alias]['userId'] = $this->_getUser('id');
+		}
+		return true;
+	}
+
+	/**
 	 * Retrieves all the timers that a user has created
 	 * @param  integer $userId The user id of the timers to return
 	 * @return array           Contains the details of all the timers     
