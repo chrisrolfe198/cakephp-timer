@@ -32,4 +32,13 @@ App::uses('Model', 'Model');
  * @package       app.Model
  */
 class AppModel extends Model {
+
+	/**
+	 * Return the value of the AuthComponent
+	 * @param  string $key key of a value that matches of a property in the AuthComponent
+	 * @return mixed       Value relating to the key
+	 */
+	protected function _getUser($key = null) {
+		return AuthComponent::user($key);
+	}
 }

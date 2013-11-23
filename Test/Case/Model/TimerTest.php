@@ -90,6 +90,9 @@ class TimerTest extends CakeTestCase
 	{
 		// Setting up variables
 		$timerId = 1;
+		// Mocking the user id
+		$this->Timer = $this->getMockForModel('Timer', array('_getUser'));
+		$this->Timer->expects($this->once())->method('_getUser')->will($this->returnValue(1));
 		// Running the function
 		$startedTimer = $this->Timer->startTimer($timerId);
 		// Retrieving some data to test against
@@ -108,6 +111,9 @@ class TimerTest extends CakeTestCase
 	{
 		// Setting up variables
 		$timerId = 3;
+		// Mocking the user id
+		$this->Timer = $this->getMockForModel('Timer', array('_getUser'));
+		$this->Timer->expects($this->once())->method('_getUser')->will($this->returnValue(2));
 		// Running the function
 		$stoppedTimer = $this->Timer->stopTimer($timerId);
 		// Retrieving some data to test against
