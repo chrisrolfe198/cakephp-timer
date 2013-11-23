@@ -15,6 +15,12 @@ class Timer extends AppModel
 			// Set the user id to the current logged in user
 			$this->data[$this->alias]['userId'] = $this->_getUser('id');
 		}
+		
+		// If the user id is empty
+		if (empty($this->data[$this->alias]['createdTimestamp'])) {
+			// Set the user id to the current logged in user
+			$this->data[$this->alias]['createdTimestamp'] = strtotime("now");
+		}
 		return true;
 	}
 
