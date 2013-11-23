@@ -32,8 +32,8 @@ public function init() {
 			'id' 			   => 1,
 			'name' 			   => 'My first timer',
 			'createdTimestamp' => 1385164800,
-			'startedTimestamp' => '',
-			'stoppedTimestamp' => '',
+			'startedTimestamp' => null,
+			'stoppedTimestamp' => null,
 			'userId' 		   => 1
 			),
 		array(
@@ -41,7 +41,7 @@ public function init() {
 			'name' 			   => 'Eggs',
 			'createdTimestamp' => 1385164800,
 			'startedTimestamp' => strtotime("now"),
-			'stoppedTimestamp' => '',
+			'stoppedTimestamp' => null,
 			'userId' 		   => 2
 			),
 		);

@@ -54,8 +54,8 @@ class TimerTest extends CakeTestCase
 					'id' 			   => '1',
 					'name' 			   => 'My first timer',
 					'createdTimestamp' => '1385164800',
-					'startedTimestamp' => '0',
-					'stoppedTimestamp' => '0',
+					'startedTimestamp' => null,
+					'stoppedTimestamp' => null,
 					'userId' 		   => '1'
 					)
 				)
