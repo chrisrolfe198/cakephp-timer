@@ -1,0 +1,27 @@
+2013-11-23 15:36:23 Error: Fatal Error (4): syntax error, unexpected '}' in [/home/crolfe/www/timer-cake/app/Test/Case/Model/TimerTest.php, line 47]
+2013-11-23 15:36:23 Error: [FatalErrorException] syntax error, unexpected '}'
+Stack Trace:
+#0 /home/crolfe/www/timer-cake/lib/Cake/Error/ErrorHandler.php(205): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/crolfe/ww...', 47)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/crolfe/ww...', 47, Array)
+#2 /home/crolfe/www/timer-cake/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/crolfe/ww...', 47, Array)
+#3 /home/crolfe/www/timer-cake/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-11-23 15:36:32 Error: Fatal Error (4): syntax error, unexpected '(', expecting ')' in [/home/crolfe/www/timer-cake/app/Test/Fixture/TimerFixture.php, line 44]
+2013-11-23 15:36:32 Error: [FatalErrorException] syntax error, unexpected '(', expecting ')'
+Stack Trace:
+#0 /home/crolfe/www/timer-cake/lib/Cake/Error/ErrorHandler.php(205): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home/crolfe/ww...', 44)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home/crolfe/ww...', 44, Array)
+#2 /home/crolfe/www/timer-cake/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home/crolfe/ww...', 44, Array)
+#3 /home/crolfe/www/timer-cake/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-11-23 15:46:29 Error: Fatal Error (1): Call to undefined method TimerTest::getUsersTotalTime() in [/home/crolfe/www/timer-cake/app/Test/Case/Model/TimerTest.php, line 70]
+2013-11-23 15:46:29 Error: [FatalErrorException] Call to undefined method TimerTest::getUsersTotalTime()
+Stack Trace:
+#0 /home/crolfe/www/timer-cake/lib/Cake/Error/ErrorHandler.php(205): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/home/crolfe/ww...', 70)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/home/crolfe/ww...', 70, Array)
+#2 /home/crolfe/www/timer-cake/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/home/crolfe/ww...', 70, Array)
+#3 /home/crolfe/www/timer-cake/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

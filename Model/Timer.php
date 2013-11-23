@@ -8,7 +8,7 @@ class Timer extends AppModel
 	 * @param  integer $userId The user id of the timers to return
 	 * @return array           Contains the details of all the timers     
 	 */
-	public function getUsersTimes($userId)
+	public function getUsersTimers($userId)
 	{
 
 	}
