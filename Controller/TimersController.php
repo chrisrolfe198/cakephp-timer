@@ -16,8 +16,8 @@ class TimersController extends AppController
 		$timers = $this->Timer->getUsersTimers($this->Auth->user('id'));
 		$totalTime = $this->Timer->getUsersTotalTime($this->Auth->user('id'));
 		// Set some variables to display in the view
-		$this->set('timers');
-		$this->set('totalTime');
+		$this->set('timers', $timers);
+		$this->set('totalTime', $totalTime);
 	}
 
 	/**
@@ -55,7 +55,7 @@ class TimersController extends AppController
 	public function stop($timerId)
 	{
 		if ($this->Timer->stopTimer($timerId)) {
-			$this->Session->setFlash('Timer has been stoped');
+			$this->Session->setFlash('Timer has been stopped');
 		} else {
 			$this->Session->setFlash('An error occured, we could not stop that timer');
 		}
