@@ -32,4 +32,22 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+	public $components = array(
+		'Session',
+		'Auth' => array(
+			'loginRedirect' => array( 
+				'controller' => 'timers',
+				'action' => 'index'
+				),
+			'logoutRedirect' => array(
+				'controller' => 'timers',
+				'action' => 'index'
+				)
+			// 'authError' => 'You need to be logged in to see this'
+			),
+		'RequestHandler',
+		);
+    
+    public function beforeFilter() {
+    }
 }
