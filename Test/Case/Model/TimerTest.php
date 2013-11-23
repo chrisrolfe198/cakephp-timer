@@ -46,13 +46,15 @@ class TimerTest extends CakeTestCase
 		$userId = 1;
 		$timersForUser = $this->Timer->getUsersTimers($userId);
 		$expected = array(
-			'Timer' => array(
-				'id' 			   => 1,
-				'name' 			   => 'My first timer',
-				'createdTimestamp' => 1385164800,
-				'startedTimestamp' => '',
-				'stoppedTimestamp' => '',
-				'userId' 		   => 1
+			0 => array(
+				'Timer' => array(
+					'id' 			   => '1',
+					'name' 			   => 'My first timer',
+					'createdTimestamp' => '1385164800',
+					'startedTimestamp' => '0',
+					'stoppedTimestamp' => '0',
+					'userId' 		   => '1'
+					)
 				)
 			);
 

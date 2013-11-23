@@ -10,7 +10,8 @@ class Timer extends AppModel
 	 */
 	public function getUsersTimers($userId)
 	{
-
+		$timers = $this->find('all', array('conditions' => array('Timer.userId' => $userId)));
+		return $timers;
 	}
 
 	/**
