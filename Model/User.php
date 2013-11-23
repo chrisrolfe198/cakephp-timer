@@ -6,7 +6,7 @@ class User extends AppModel
 {
 	public $hasMany = 'Timer';
 
-	public function beforeSave()
+	public function beforeSave($options = array())
 	{
 		// Before we save a password field
 		if (isset($this->data[$this->alias]['password'])) {
