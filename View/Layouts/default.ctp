@@ -19,8 +19,6 @@ $this->Html->css('bootstrap.min.css', array( 'inline' => false ));
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
-		echo $this->Html->meta('viewport', 'width=device-width, initial-scale=1.0');
-
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 	?>
