@@ -85,7 +85,6 @@ class TimerTest extends CakeTestCase
 		$this->Timer->startTimer($timerId);
 		$timerData = $this->Timer->find( 'first', array( 'conditions' => array('Timer.id' => $timerId)));
 		$this->assertEquals($timerData['Timer']['startedTimestamp'], strtotime("now"));
-
 	}
 
 	/**

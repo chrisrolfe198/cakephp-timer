@@ -42,7 +42,8 @@ class Timer extends AppModel
 	 */
 	public function startTimer($timerId)
 	{
-
+		$this->id = $timerId;
+		$this->saveField('startedTimestamp', strtotime("now"));
 	}
 
 	/**
