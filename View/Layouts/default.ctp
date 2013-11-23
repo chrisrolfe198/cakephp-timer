@@ -31,7 +31,7 @@ $this->Html->css('bootstrap.min.css', array( 'inline' => false ));
 		<?php if ($this->Session->read('Auth.User')): ?>
 			<nav>
 				<ul class="nav nav-pills">
-					<li><?=$this->Html->link('Add a timer', array('controller' => 'timer', 'action' => 'add'));?></li>
+				<li><?=$this->Html->link('Add a timer', array('controller' => 'timers', 'action' => 'add'));?></li>
 					<li><?=$this->Html->link('Log out', array('controller' => 'users', 'action' => 'logout'));?></li>
 				</ul>
 			</nav>
