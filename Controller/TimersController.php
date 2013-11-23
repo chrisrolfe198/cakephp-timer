@@ -2,6 +2,9 @@
 /**
  * Controller used to manage the timers in the application
  */
+
+App::uses('AppController', 'Controller');
+
 class TimersController extends AppController
 {
 

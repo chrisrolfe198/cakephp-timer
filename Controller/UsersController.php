@@ -2,6 +2,9 @@
 /**
  * Controller used to log users in, register users and log users out
  */
+
+App::uses('AppController', 'Controller');
+
 class UsersController extends AppController
 {
 
