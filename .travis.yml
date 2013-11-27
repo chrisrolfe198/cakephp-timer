@@ -11,14 +11,13 @@ before_script:
   - echo "<?php
     class DATABASE_CONFIG {
       public \$test = array(
-    'datasource' => 'Database/Mysql',
-    'persistent' => false,
-    'host' => 'localhost',
-    'login' => 'root',
-    'password' => '',
-    'database' => 'timercaketest',
-    'prefix' => '',
-  );
+        'datasource' => 'Database/Mysql',
+        'database' => 'cakephp_test',
+        'host' => 'localhost',
+        'login' => 'travis',
+        'password' => '',
+        'persistent' => false
+      );
     }" > ../cakephp/app/Config/database.php
  
 script:
