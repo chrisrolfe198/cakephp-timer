@@ -9,7 +9,7 @@ before_script:
 - chmod -R 777 ../cakephp/app/tmp
 - mysql -e 'create database cakephp_test;'
 - echo "<?php
-class DATABASE_CONFIG {
+  class DATABASE_CONFIG {
   public $test = array(
     'datasource' => 'Database/Mysql',
     'persistent' => false,
