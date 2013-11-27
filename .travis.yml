@@ -1,7 +1,5 @@
 language: php
 php:
-  - "5.5"
-  - "5.4"
   - "5.3"
 
 before_script:
@@ -12,14 +10,14 @@ before_script:
   - sh -c "mysql -e 'CREATE DATABASE cakephp_test;'"
   - echo "<?php
     class DATABASE_CONFIG {
-    public \$test = array(
-      'datasource' => 'Database/Mysql',
-      'database' => 'cakephp_test',
-      'host' => '0.0.0.0',
-      'login' => 'travis'
-      'host' => '',
-      'persistent' => false,
-    );
+      public \$test = array(
+        'datasource' => 'Database/Mysql',
+        'database' => 'cakephp_test',
+        'host' => '0.0.0.0',
+        'login' => 'travis'
+        'host' => '',
+        'persistent' => false
+      );
     }" > ../cakephp/app/Config/database.php
  
 script:
