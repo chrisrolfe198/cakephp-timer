@@ -13,7 +13,7 @@ before_script:
       public \$test = array(
         'datasource' => 'Database/Mysql',
         'database' => 'cakephp_test',
-        'host' => '0.0.0.0',
+        'host' => 'localhost',
         'login' => 'travis',
         'host' => '',
         'persistent' => false
