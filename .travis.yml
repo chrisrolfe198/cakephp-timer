@@ -7,7 +7,7 @@ before_script:
   - rm -r ../cakephp/app/
   - git clone git://github.com/christopherrolfe198/cakephp-timer ../cakephp/app
   - chmod -R 777 ../cakephp/app/tmp
-  - mysql -e 'create database myapp_test;'
+  - mysql -e 'create database cakephp_test;'
   - echo "<?php
     class DATABASE_CONFIG {
       public \$test = array(
