@@ -4,7 +4,7 @@ php:
   - "5.4"
   - "5.3"
 
-  before_script:
+before_script:
   - git clone git://github.com/cakephp/cakephp ../cakephp && cd ../cakephp
   - rm -r app/
   - git clone git://github.com/christopherrolfe198/cakephp-timer app
